@@ -1,0 +1,15 @@
+#!/usr/local/bin/python3
+from bing_image_downloader import downloader
+import sys
+
+if len(sys.argv) < 2:
+    print("usage: frombing <query> [<limit>=100]")
+
+query = sys.argv[1]
+
+limit = 100
+if len(sys.argv) >= 3:
+    limit = int(sys.argv[2])
+
+downloader.download(query, limit=limit)
+
